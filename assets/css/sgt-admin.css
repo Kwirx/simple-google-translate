@@ -1,0 +1,243 @@
+/**
+ * Simple Google Translate Admin Styles
+ */
+
+/* Settings Page Layout
+--------------------------------------------- */
+.sgt-settings-form {
+    margin-top: 20px;
+}
+
+/* Tabs
+--------------------------------------------- */
+.nav-tab-wrapper {
+    margin-bottom: 20px;
+}
+
+.nav-tab {
+    margin-left: 0;
+    margin-right: 5px;
+}
+
+/* Settings Section
+--------------------------------------------- */
+.sgt-floating-section,
+.sgt-languages-section {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.sgt-settings-group {
+    margin-bottom: 20px;
+}
+
+.sgt-settings-group:last-child {
+    margin-bottom: 0;
+}
+
+/* Section Headers
+--------------------------------------------- */
+.sgt-floating-section h2 {
+    margin: 0;
+    padding: 0 0 15px;
+    font-size: 1.3em;
+    font-weight: 600;
+    border-bottom: 1px solid #ddd;
+}
+
+.sgt-floating-section h2:not(:first-child) {
+    margin-top: 35px;
+    padding-top: 35px;
+}
+
+/* Language Search
+--------------------------------------------- */
+.sgt-language-search {
+    width: 100%;
+    max-width: 600px;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 5px;
+    margin-left: 220px;
+}
+
+.sgt-language-search:focus {
+    border-color: #2271b1;
+    box-shadow: 0 0 0 1px #2271b1;
+    outline: none;
+    
+}
+
+/* Language List
+--------------------------------------------- */
+.sgt-languages-list {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 15px;
+    background: #fafafa;
+    border-radius: 4px;
+    max-width: 575px;
+}
+
+.sgt-languages-list label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.sgt-languages-list label:hover {
+    background-color: #f0f0f1;
+}
+
+.sgt-languages-list img {
+    margin-right: 8px;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    width: 16px;
+    height: 12px;
+}
+
+.sgt-languages-list input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.sgt-language-name {
+    margin-left: 8px;
+}
+
+/* Toggle Switch
+--------------------------------------------- */
+.sgt-toggle {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.sgt-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.sgt-toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 24px;
+}
+
+.sgt-toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+.sgt-toggle input:checked + .sgt-toggle-slider {
+    background-color: #2271b1;
+}
+
+.sgt-toggle input:focus + .sgt-toggle-slider {
+    box-shadow: 0 0 1px #2271b1;
+}
+
+.sgt-toggle input:checked + .sgt-toggle-slider:before {
+    transform: translateX(26px);
+}
+
+/* Form Fields
+--------------------------------------------- */
+.form-table td fieldset label {
+    margin: 0 !important;
+}
+
+.sgt-settings-field {
+    margin: 15px 0;
+}
+
+.sgt-settings-field input[type="text"],
+.sgt-settings-field input[type="number"],
+.sgt-settings-field select {
+    max-width: 300px;
+}
+
+.sgt-settings-field .description {
+    margin-top: 8px;
+    color: #666;
+    font-style: italic;
+}
+
+/* Color Picker
+--------------------------------------------- */
+.wp-picker-container {
+    display: inline-block;
+}
+
+.wp-picker-container .wp-color-result.button {
+    margin: 0 6px 6px 0;
+}
+
+.wp-picker-container .wp-picker-input-wrap {
+    vertical-align: top;
+}
+
+/* Responsive Adjustments
+--------------------------------------------- */
+@media screen and (max-width: 782px) {
+    .sgt-settings-field input[type="text"],
+    .sgt-settings-field input[type="number"],
+    .sgt-settings-field select {
+        max-width: 100%;
+    }
+
+    .sgt-languages-list label {
+        padding: 12px 8px;
+    }
+
+    .wp-picker-container input[type="text"].wp-color-picker {
+        width: 65px;
+    }
+
+    .nav-tab-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .nav-tab {
+        margin-bottom: 5px;
+    }
+
+    .sgt-floating-section {
+        padding: 15px;
+    }
+
+    .sgt-floating-section h2 {
+        padding-bottom: 10px;
+    }
+
+    .sgt-floating-section h2:not(:first-child) {
+        margin-top: 20px;
+        padding-top: 20px;
+    }
+}
