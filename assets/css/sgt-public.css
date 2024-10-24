@@ -23,6 +23,7 @@
 --------------------------------------------- */
 .sgt-translate-element {
   min-width: 130px;
+  position: relative;
 }
 
 .goog-te-combo {
@@ -39,21 +40,22 @@
 
 .goog-te-combo:focus {
   outline: none;
-  border-color: #2271b1;
-  box-shadow: 0 0 0 1px #2271b1;
+  background-color: #eaeaea;
+
 }
 
 .goog-te-gadget .goog-te-combo {
   margin: 0px !important;
 }
 
-html.translated-ltr body {
+html.translated-ltr body,
+html.translated-rtl body {
   top: 0 !important;
 }
 
-/* Hide Google Translate Attribution
+/* Hide Google Translate Attribution & elements
 --------------------------------------------- */
-.goog-logo-link, 
+.goog-logo-link,
 .goog-te-gadget span {
   display: none !important;
 }
@@ -61,6 +63,17 @@ html.translated-ltr body {
 .goog-te-gadget {
   color: transparent !important;
   font-size: 0px !important;
+}
+
+html.translated-ltr #goog-gt-tt.skiptranslate,
+html.translated-rtl #goog-gt-tt.skiptranslate  {
+  display: none !important;
+}
+
+html.translated-ltr font,
+html.translated-rtl font {
+  box-shadow: none;
+  background-color: transparent;
 }
 
 /* Responsive Adjustments

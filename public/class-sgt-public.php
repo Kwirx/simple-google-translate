@@ -124,7 +124,7 @@ class SGT_Public {
     private function add_dynamic_styles() {
         $settings = $this->get_settings();
         $window_settings = $settings['window'];
-        
+
         if (!isset($window_settings['enabled']) || !$window_settings['enabled']) {
             return;
         }
@@ -200,19 +200,19 @@ class SGT_Public {
     public function add_floating_window() {
         $settings = $this->get_settings();
         $window_settings = $settings['window'];
-        
+
         if (!isset($window_settings['enabled']) || !$window_settings['enabled']) {
             return;
         }
 
-        $custom_text = isset($window_settings['custom_text']) 
-            ? esc_html($window_settings['custom_text']) 
+        $custom_text = isset($window_settings['custom_text'])
+            ? esc_html($window_settings['custom_text'])
             : esc_html__('Translate Website', 'simple-google-translate');
 
         ?>
         <div id="sgt-floating-window" class="sgt-floating-window">
             <?php if ($custom_text): ?>
-              <div class="sgt-window-text"><?php echo $custom_text; ?></div>
+                <div class="sgt-window-text"><?php echo $custom_text; ?></div>
             <?php endif; ?>
             <div id="google_translate_element" class="sgt-translate-element"></div>
         </div>

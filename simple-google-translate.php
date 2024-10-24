@@ -11,7 +11,7 @@
  * Plugin Name:       Simple Google Translate
  * Plugin URI:        https://kwirx.com/simple-google-translate
  * Description:       A lightweight WordPress plugin that adds Google Translate functionality to any WordPress site.
- * Version:           1.0.0
+ * Version:           1.1.0
  * Requires at least: 5.2
  * Requires PHP:      7.2
  * Author:            Kwirx Creative
@@ -28,7 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Plugin version.
-define( 'SGT_VERSION', '1.0.0' );
+define( 'SGT_VERSION', '1.1.0' );
 define( 'SGT_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'SGT_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'SGT_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );

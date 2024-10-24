@@ -1,37 +1,59 @@
+/**
+ * Simple Google Translate
+ * @requires jQuery
+ */
+
 (function($) {
   'use strict';
 
-  function initializeTranslator() {
-      var $select = $('.goog-te-combo');
-      if ($select.length) {
-          // Only add exit translation option if select language option exists
-          if (!$select.find('option[value="exit"]').length) {
-              $select.prepend('<option value="exit">Show Original</option>');
-          }
+  // Constants for DOM elements and values
+  const ORIGINAL_LANG_OPTION = '<option value="exit">Show Original</option>';
+  const SELECT_SELECTOR = '.goog-te-combo';
+  const CONTAINER_SELECTOR = 'iframe[id$="container"]';
+  const CLOSE_LINK_SELECTOR = 'a[id$="close"]';
 
-          // Handle select change
-          $select.off('change').on('change', function() {
-              if ($(this).val() === 'exit') {
-                  var $container = $('iframe[id$="container"]');
-                  if ($container.length) {
-                      var containerDocument = $container.contents();
-                      var closeLink = containerDocument.find('a[id$="close"]');
-                      if (closeLink.length) {
-                          closeLink[0].click();
-                      }
-                  }
-                  $(this).val($(this).find('option:not([value="exit"]):first').val());
-              }
-          });
-      }
+  /**
+   * Adds the "Show Original" option to the language select dropdown if it doesn't exist.
+  */
+  function addExitOption($select) {
+    if (!$select.find('option[value="exit"]').length) {
+      $select.prepend(ORIGINAL_LANG_OPTION);
+    }
   }
 
-  // Check for select element periodically
+  /**
+   * Handles the action when "Show Original" is selected.
+   * Closes the translation and resets the select to its first non-exit option.
+   */
+  function handleExitTranslation($select) {
+    const $container = $(CONTAINER_SELECTOR);
+    if ($container.length) {
+      const closeLink = $container.contents().find(CLOSE_LINK_SELECTOR)[0];
+      if (closeLink) {
+        closeLink.click(); // Simulate clicking the close link
+      }
+    }
+    // Reset the select to the first non-exit option
+    $select.val($select.find('option:not([value="exit"]):first').val());
+  }
+
+  /**
+   * Initializes the translator by adding the exit option and setting up the change handler.
+   */
+  function initializeTranslator() {
+    const $select = $(SELECT_SELECTOR);
+    if ($select.length) {
+      addExitOption($select);
+    }
+  }
+
+  // Document ready function
   $(document).ready(function() {
-      // Initial check
-      initializeTranslator();
-      
-      // Keep checking every 500ms for dynamic elements
-      setInterval(initializeTranslator, 500);
+    // Initial check for the translator
+    initializeTranslator();
+
+    // Set up event listener for user interaction with the select element
+    $(document).on('mouseenter focus', SELECT_SELECTOR, initializeTranslator);
+
   });
 })(jQuery);
