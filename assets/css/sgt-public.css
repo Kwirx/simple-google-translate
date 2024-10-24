@@ -1,0 +1,78 @@
+/**
+ * Simple Google Translate Public Styles
+ */
+
+/* Floating Window
+--------------------------------------------- */
+.sgt-floating-window {
+  position: fixed;
+  z-index: 9999;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  max-width: 300px;
+  min-width: 150px;
+}
+
+.sgt-window-text {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+/* Google Translate Element
+--------------------------------------------- */
+.sgt-translate-element {
+  min-width: 130px;
+}
+
+.goog-te-combo {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.4;
+  box-sizing: border-box;
+}
+
+.goog-te-combo:focus {
+  outline: none;
+  border-color: #2271b1;
+  box-shadow: 0 0 0 1px #2271b1;
+}
+
+.goog-te-gadget .goog-te-combo {
+  margin: 0px !important;
+}
+
+html.translated-ltr body {
+  top: 0 !important;
+}
+
+/* Hide Google Translate Attribution
+--------------------------------------------- */
+.goog-logo-link, 
+.goog-te-gadget span {
+  display: none !important;
+}
+
+.goog-te-gadget {
+  color: transparent !important;
+  font-size: 0px !important;
+}
+
+/* Responsive Adjustments
+--------------------------------------------- */
+@media screen and (max-width: 782px) {
+  .sgt-floating-window {
+      max-width: 250px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .sgt-floating-window {
+      max-width: 200px;
+  }
+}
